@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7480B971244B45C600345AB9 /* IamRichAngelaYuCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IamRichAngelaYuCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7480B971244B45C600345AB9 /* IWillWinAngelaYuCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IWillWinAngelaYuCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7480B974244B45C600345AB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7480B976244B45C600345AB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7480B978244B45C600345AB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		7480B972244B45C600345AB9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7480B971244B45C600345AB9 /* IamRichAngelaYuCourse.app */,
+				7480B971244B45C600345AB9 /* IWillWinAngelaYuCourse.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 			);
 			name = IamRichAngelaYuCourse;
 			productName = IamRichAngelaYuCourse;
-			productReference = 7480B971244B45C600345AB9 /* IamRichAngelaYuCourse.app */;
+			productReference = 7480B971244B45C600345AB9 /* IWillWinAngelaYuCourse.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -290,8 +290,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YehorKozlovskyi.IamRichAngelaYuCourse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YehorKozlovskyi.IWillWinAngelaYuCourse;
+				PRODUCT_NAME = IWillWinAngelaYuCourse;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,8 +307,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YehorKozlovskyi.IamRichAngelaYuCourse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YehorKozlovskyi.IWillWinAngelaYuCourse;
+				PRODUCT_NAME = IWillWinAngelaYuCourse;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
