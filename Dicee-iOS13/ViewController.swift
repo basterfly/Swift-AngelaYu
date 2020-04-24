@@ -11,22 +11,24 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var diceImageViewOne: UIImageView!
-    
     @IBOutlet weak var diceImageViewTwo: UIImageView!
+    
+    var leftDiceValue = 0
+    var rightDiceValue = 5
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //  who          what    value
-        diceImageViewOne.image = #imageLiteral(resourceName: "DiceSix")
-//        diceImageViewOne.alpha = 0.5
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceTwo")
+       
     }
     @IBAction func rollActionButton(_ sender: UIButton) {
         //  who          what    value
-        diceImageViewOne.image = #imageLiteral(resourceName: "DiceFive")
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
+        diceImageViewOne.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][leftDiceValue] //Array with default value by index by value leftDiceValue
+        leftDiceValue += 1
+        diceImageViewTwo.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][rightDiceValue]
+        rightDiceValue -= 1
+
     }
 
 }
