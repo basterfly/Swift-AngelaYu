@@ -18,14 +18,40 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        print(sender)
-        print(sender.titleLabel?.text)
-        print(sender.backgroundColor)
-        playSound()
+        if sender.currentTitle == "C" {
+            playSound(soundName: "C")
+            print(sender.currentTitle as Any)
+        }
+        if sender.currentTitle == "D" {
+            playSound(soundName: "D")
+            print(sender.currentTitle!)
+        }
+        if sender.currentTitle == "E" {
+            playSound(soundName: "E")
+            print(sender.currentTitle!)
+        }
+        if sender.currentTitle == "F" {
+            playSound(soundName: "F")
+            print(sender.currentTitle)
+        }
+        if sender.currentTitle == "G" {
+            playSound(soundName: "G")
+            print(sender.currentTitle!)
+        }
+        if sender.currentTitle == "A" {
+            playSound(soundName: "A")
+            print(sender.currentTitle)
+        }
+        if sender.currentTitle == "B" {
+            playSound(soundName: "B")
+            print(sender.currentTitle)
+        }
+        
+//        playSound(currentTitle: <#T##String#>)
     }
     
-    func playSound() {
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
                 
