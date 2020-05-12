@@ -9,7 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let softTime = 5
+    let mediumTime = 7
+    let hardTime =  12
     
-
+    @IBAction func softAction(_ sender: UIButton) {
+        let hardness = sender.titleLabel!.text!
+        if hardness == "Soft" {
+            print(softTime)
+        }
+        if hardness == "Medium" {
+            print(mediumTime)
+        }
+        if hardness == "Hard" {
+            print(hardTime)
+        }
+    }
+    
 
 }
