@@ -15,14 +15,16 @@ class ViewController: UIViewController {
     
     @IBAction func softAction(_ sender: UIButton) {
         let hardness = sender.titleLabel!.text!
-        if hardness == "Soft" {
+        
+        switch hardness {
+        case "Soft":
             print(softTime)
-        }
-        if hardness == "Medium" {
+        case "Medium":
             print(mediumTime)
-        }
-        if hardness == "Hard" {
+        case "Hard":
             print(hardTime)
+        default:
+            print("Error")
         }
     }
     
