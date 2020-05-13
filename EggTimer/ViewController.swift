@@ -15,7 +15,15 @@ class ViewController: UIViewController {
     @IBAction func softAction(_ sender: UIButton) {
         let hardness = sender.titleLabel!.text!
         print(eggTimes[hardness]!)
+        sixtySecondsTimer(multipliyer: eggTimes[hardness]!)
+        
     }
     
-
+    func sixtySecondsTimer(multipliyer: Int) {
+        let seconds = 60 * multipliyer
+        for i in (-1 * seconds)...(-1) {
+            print(-i)
+            sleep(1)
+        }
+    }
 }
