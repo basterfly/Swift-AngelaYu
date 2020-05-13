@@ -14,17 +14,7 @@ class ViewController: UIViewController {
     
     @IBAction func softAction(_ sender: UIButton) {
         let hardness = sender.titleLabel!.text!
-        
-        switch hardness {
-        case "Soft":
-            print(eggTimes["Soft"]!)
-        case "Medium":
-            print(eggTimes["Medium"]!)
-        case "Hard":
-            print(eggTimes["Hard"]!)
-        default:
-            print("Error")
-        }
+        print(eggTimes[hardness]!)
     }
     
 
