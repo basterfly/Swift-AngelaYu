@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         progressBar.progress = Float(quizBrain.questionNumber + 1) / Float(quizBrain.quiz.count)
         
-        if quizBrain.checkUnswer(userAnswer!) {
+        if quizBrain.checkAnswer(userAnswer!) {
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red

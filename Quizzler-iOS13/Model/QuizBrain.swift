@@ -27,15 +27,13 @@ struct QuizBrain {
 
     
 
-    mutating func checkUnswer(_ userAnswer: String) -> Bool {
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
         let actualAnswer = quiz[questionNumber].answer
         if userAnswer == actualAnswer {
-//            sender.backgroundColor = UIColor.green
             print("Right!")
             self.checkQuestionNumber()
             return true
         } else {
-//            sender.backgroundColor = UIColor.red
             print("Wrong!")
             self.checkQuestionNumber()
             return false
