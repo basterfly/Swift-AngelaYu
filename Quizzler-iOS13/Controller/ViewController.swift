@@ -16,9 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    
-    
-    var timer = Timer()
     var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
@@ -28,7 +25,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        timer.invalidate()
         let userAnswer = sender.currentTitle
         progressBar.progress = quizBrain.getProgress()
         let userGotItRight = quizBrain.checkAnswer(userAnswer!)
@@ -42,18 +38,14 @@ class ViewController: UIViewController {
         
         quizBrain.nextQuestion()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false, block: { (timer) in
-            self.updateUi()
-        })
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUi), userInfo: nil, repeats: false)
     }
     
-    func updateUi() {
+    @objc func updateUi() {
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
         questionLabel.text = quizBrain.getQuestionText()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
-        timer.invalidate()
-        
     }
 
 }
