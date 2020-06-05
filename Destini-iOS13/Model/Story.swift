@@ -9,7 +9,11 @@
 import Foundation
 
 struct Story {
+    let story0 = "You see a fork in the road."
+    let choice1 = "Take a left."
+    let choice2 = "Take a right."
+    
     let storyDataBase = [
-        "", "", ""
+        /*Question*/("You see a fork in the road.", "Take a left.", "Take a right.")
     ]
 }
