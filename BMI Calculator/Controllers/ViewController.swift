@@ -9,20 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var height: Float = 0.0
-    @IBAction func heightSlider(_ sender: UISlider) {
-        height = (sender.value * 100).rounded() / 100
-        print(height)
-    }
-    @IBAction func weightSlider(_ sender: UISlider) {
-        print(String(format: "%.2f", sender.value))
-    }
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func heightSlider(_ sender: UISlider) {
+        heightLabel.text = String(format: "%.2f", sender.value) + "m"
+    }
+    @IBAction func weightSlider(_ sender: UISlider) {
+        weightLabel.text = String(format: "%.0f", sender.value) + "Kg" //OR Int(sender.value) or  Int(sender.value.rounded())
+    }
 
 }
 
