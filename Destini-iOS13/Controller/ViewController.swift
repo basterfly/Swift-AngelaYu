@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let story = storyBrain.getAStory(counter: storyBrain.storyNumber)
-        storyLabel.text = story.story0
+        storyLabel.text = story.title
         choice1Button.setTitle(story.choice1, for: .normal)
         choice2Button.setTitle(story.choice2, for: UIControl.State.normal)
     }
@@ -30,24 +30,11 @@ class ViewController: UIViewController {
     }
     
     func updateUi(sender: UIButton) {
-        storyBrain.nextStory(userChoice: (sender.titleLabel?.text)!)
-        storyLabel.text = storyBrain.stories[storyBrain.storyNumber].story0
+        storyBrain.nextStory(userChoice: (sender.titleLabel?.text)!) // same -> sender.currentTitle!
+        storyLabel.text = storyBrain.stories[storyBrain.storyNumber].title
         choice1Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice1, for: UIControl.State.normal)
         choice2Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice2, for: UIControl.State.normal)
         
-//        if sender == choice1Button {
-//
-//        }
-//        if sender == choice2Button {
-////            storyBrain.storyNumber += 1
-//        }
-//        if storyBrain.storyNumber == 2 && storyBrain.stories[storyBrain.storyNumber].story0 == storyBrain.stories[2].story0 {
-//            storyBrain.storyNumber = 0
-//        }
-//        if storyBrain.storyNumber >= storyBrain.stories.count { //test for looping
-//            return storyBrain.storyNumber = 0
-//        }
-//        if story
     }
     
 }
