@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     var height: Float = 0.0
     @IBAction func heightSlider(_ sender: UISlider) {
-        height = sender.value
+        height = (sender.value * 100).rounded() / 100
         print(height)
     }
     @IBAction func weightSlider(_ sender: UISlider) {
-        print(sender.value.rounded())
+        print(String(format: "%.2f", sender.value))
     }
     
     override func viewDidLoad() {
