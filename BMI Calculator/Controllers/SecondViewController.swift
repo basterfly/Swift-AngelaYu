@@ -9,7 +9,16 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    var bmiValue = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
+        let label = UILabel()
+        label.text = bmiValue
+        label.frame = CGRect(x: 50, y: 50, width: 50, height: 25)
+        view.addSubview(label)
+        
+        
     }
 }
