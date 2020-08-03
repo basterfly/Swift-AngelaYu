@@ -17,11 +17,7 @@ struct CalculatorBrain {
     }
     
     func getBmiValue() -> String {
-        if let safeBmi = bmi {
-            return String(format: "%.2f", safeBmi)
-        } else {
-            return "0.0"
-        }
+        return String(format: "%.2f", bmi ?? "0.0") //NIL coalescing Operator
     }
     
 }
