@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct BMI {
+struct Bmi {
     let value: Float
     let advice: String
     let color: UIColor
