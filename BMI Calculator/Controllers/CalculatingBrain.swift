@@ -6,7 +6,7 @@
 //  Copyright © 2020 Angela Yu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct CalculatorBrain {
     var bmi: Bmi?
@@ -27,4 +27,11 @@ struct CalculatorBrain {
         return String(format: "%.2f", bmi?.value ?? "0.0") //NIL coalescing Operator
     }
     
+    func getAdvice() -> String {
+        return bmi?.advice ?? "NO Advice"
+    }
+    
+    func getBackgroundColor() -> UIColor {
+        return bmi?.color ?? UIColor.clear
+    }
 }

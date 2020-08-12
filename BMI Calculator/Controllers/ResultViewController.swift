@@ -9,7 +9,9 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    var bmiValue : String?
+    var bmiValue : String? //опшиналы нужны т.к. не делается инициализация
+    var advice: String?
+    var backgroundColor: UIColor?
     
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
@@ -18,6 +20,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bmiLabel.text = bmiValue
+        adviceLabel.text = advice
+        background.backgroundColor = backgroundColor // view.backgroundColor = backgroundColor - vожно так и не делать тогда оутлет к background
         // Do any additional setup after loading the view.
     }
     
