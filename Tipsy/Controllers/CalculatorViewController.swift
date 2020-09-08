@@ -10,34 +10,23 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 
-    var percentage = 0.1
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var zeroPctButton: UIButton!
     @IBOutlet weak var tenPctButton: UIButton!
     @IBOutlet weak var twentyPctButton: UIButton!
     @IBOutlet weak var splitNumberLabel: UILabel!
     
+    var tip = 0.1
     
     @IBAction func tipChanged(_ sender: UIButton) {
-        switch sender {
-        case zeroPctButton:
-            zeroPctButton.isSelected = true
-            tenPctButton.isSelected = false
-            twentyPctButton.isSelected = false
-            percentage = 0.0
-        case tenPctButton:
-            zeroPctButton.isSelected = false
-            tenPctButton.isSelected = true
-            twentyPctButton.isSelected = false
-            percentage = 0.1
-        case twentyPctButton:
-            zeroPctButton.isSelected = false
-            tenPctButton.isSelected = false
-            twentyPctButton.isSelected = true
-            percentage = 0.2
-        default:
-            tenPctButton.isSelected = true
-        }
+        zeroPctButton.isSelected = false
+        tenPctButton.isSelected = false
+        twentyPctButton.isSelected = false
+        sender.isSelected = true
+        let buttonTitle = sender.currentTitle!
+        let buttonTitleMinusPercentSign = String(buttonTitle.dropLast())
+        let buttonTitleAsNumber = Double(buttonTitleMinusPercentSign)!
+        tip = buttonTitleAsNumber / 100
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -45,7 +34,7 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(percentage)
+        print(tip)
     }
     
     override func viewDidLoad() {
