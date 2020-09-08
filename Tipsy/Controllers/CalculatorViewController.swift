@@ -10,6 +10,7 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 
+    var percentage = 0.1
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var zeroPctButton: UIButton!
     @IBOutlet weak var tenPctButton: UIButton!
@@ -18,7 +19,25 @@ class CalculatorViewController: UIViewController {
     
     
     @IBAction func tipChanged(_ sender: UIButton) {
-        
+        switch sender {
+        case zeroPctButton:
+            zeroPctButton.isSelected = true
+            tenPctButton.isSelected = false
+            twentyPctButton.isSelected = false
+            percentage = 0.0
+        case tenPctButton:
+            zeroPctButton.isSelected = false
+            tenPctButton.isSelected = true
+            twentyPctButton.isSelected = false
+            percentage = 0.1
+        case twentyPctButton:
+            zeroPctButton.isSelected = false
+            tenPctButton.isSelected = false
+            twentyPctButton.isSelected = true
+            percentage = 0.2
+        default:
+            tenPctButton.isSelected = true
+        }
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -26,7 +45,7 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        
+        print(percentage)
     }
     
     override func viewDidLoad() {
