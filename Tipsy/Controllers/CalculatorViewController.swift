@@ -46,8 +46,11 @@ class CalculatorViewController: UIViewController {
             let result = billTotal * tip / Double(numberOfPeople)
             print(result)
             finalResult = String(format: "%.2F", result)
+            
             billTextField.text = finalResult //just for test
         }
+        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
         
         
         
@@ -58,7 +61,13 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToresult" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.result = finalResult //???
+        }
+    }
 
 }
 
