@@ -44,17 +44,10 @@ class CalculatorViewController: UIViewController {
         if bill != "" {
             billTotal = Double(bill)!
             let result = billTotal * tip / Double(numberOfPeople)
-            print(result)
             finalResult = String(format: "%.2F", result)
-            
-            billTextField.text = finalResult //just for test
         }
         
         self.performSegue(withIdentifier: "goToResult", sender: self)
-        
-        
-        
-        
     }
     
     override func viewDidLoad() {
@@ -65,7 +58,8 @@ class CalculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToresult" {
             let destinationVC = segue.destination as! ResultsViewController
-            destinationVC.result = finalResult //???
+            print(finalResult)
+            destinationVC.result = "5.5" //???
         }
     }
 

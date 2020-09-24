@@ -12,12 +12,15 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
     
+    var result = "0.0"
+    
     @IBAction func recalculateButton(_ sender: UIButton) {
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        totalLabel.text = result
 
         // Do any additional setup after loading the view.
     }

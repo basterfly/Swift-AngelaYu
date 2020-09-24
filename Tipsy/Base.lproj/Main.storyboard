@@ -203,12 +203,12 @@
                         <outlet property="tenPctButton" destination="7y6-Kf-yF0" id="vQj-s0-Cci"/>
                         <outlet property="twentyPctButton" destination="UtR-dU-EKt" id="Pll-KG-M2d"/>
                         <outlet property="zeroPctButton" destination="XzR-0E-Xf7" id="YQA-6p-VWS"/>
-                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToresult" id="Fph-gi-cPN"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResult" id="Fph-gi-cPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="159" y="118"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="bJV-Cc-sXH">
