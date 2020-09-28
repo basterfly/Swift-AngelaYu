@@ -56,10 +56,9 @@ class CalculatorViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToresult" {
+        if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultsViewController
-            print(finalResult)
-            destinationVC.result = "5.5" //???
+            destinationVC.result = finalResult
         }
     }
 
