@@ -45,9 +45,8 @@ class CalculatorViewController: UIViewController {
             billTotal = Double(bill)!
             let result = billTotal * tip / Double(numberOfPeople)
             finalResult = String(format: "%.2F", result)
+            self.performSegue(withIdentifier: "goToResult", sender: self)
         }
-        
-        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
     override func viewDidLoad() {

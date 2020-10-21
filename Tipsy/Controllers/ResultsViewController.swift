@@ -15,7 +15,7 @@ class ResultsViewController: UIViewController {
     var result = "0.0"
     
     @IBAction func recalculateButton(_ sender: UIButton) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
