@@ -15,7 +15,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
-    
+    var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
-        print(searchTextField.text!)
         searchTextField.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { //обрабатывает нажатие GO/Return для поля textField
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
         return true
     }
     
@@ -45,6 +43,9 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) { //введенный текст остается в поле с применением функции
 //        textField.text = "" //а так мы его обнулим как и без этого метода
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
     }
 }
 
