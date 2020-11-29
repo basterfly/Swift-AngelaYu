@@ -34,7 +34,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text == "" {
-            textField.placeholder = "Type your city name here"
+            textField.placeholder = "Type a city name here"
             return false
         } else {
             return true
