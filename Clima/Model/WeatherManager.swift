@@ -8,6 +8,8 @@
 
 import Foundation
 
+var weatherController = WeatherViewController()
+
 struct WeatherManager {
     let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&appid=04514790ff608722834c77770feb2ad6" //q=Kharkiv
 
@@ -25,7 +27,7 @@ struct WeatherManager {
                     return //выйти из ф-ции т.к. есть ошибка
                 }
                 if let safeData = data {
-                    parseJSON(weatherData: safeData)//
+                    self.parseJSON(weatherData: safeData)
                     let dataString = String(data: safeData, encoding: String.Encoding.utf8)
                     print(dataString!)
                 }
@@ -39,10 +41,36 @@ struct WeatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             print(decodedData.name)
+//            weatherController.cityLabel.text = decodedData.name
             print(decodedData.main.temp)
+//            weatherController.temperatureLabel.text = String(decodedData.main.temp)
             print(decodedData.weather[0].description)
+            let id = decodedData.weather[0].id
+            print(getConditionName(conditionId: id))
         } catch {
             print(error)
         }
+    }
+    
+    func getConditionName(conditionId: Int) -> String {
+        switch conditionId {
+        case 200...232:
+            return "cloud.bolt"
+        case 300...321:
+            return "cloud.drizzle"
+        case 500...531:
+            return "cloud.rain"
+        case 600...622:
+            return "cloud.snow"
+        case 701...781:
+            return "cloud.fog"
+        case 800:
+            return "sun.max"
+        case 801...804:
+            return "cloud.bolt"
+        default:
+            return "cloud"
+        }
+        
     }
 }
